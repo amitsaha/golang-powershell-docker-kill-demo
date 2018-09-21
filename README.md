@@ -31,7 +31,7 @@ Run program:
 
 At this stage our process tree looks like this:
 
-![Process Tree][process_tree.PNG]
+![Process Tree][process_tree.png]
 
 
 
