@@ -4,6 +4,8 @@
 the process specified by PID as well as any child processes started by it.
 I wanted to see if it also kills child processes started by the child processes.
 
+The reason the language is `Golang` is because I was investigating this [issue](https://github.com/buildkite/agent/issues/794)
+
 ## Demo
 
 We create a process tree as follows:
