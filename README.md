@@ -58,3 +58,8 @@ exit status 1
 ```
 
 So, `taskkill /t` does terminate the grandchildren as well.
+
+## Useful links
+
+- [Identifying child processes in powershell](http://www.boldevin.com/?p=89)
+- [Process explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer)
