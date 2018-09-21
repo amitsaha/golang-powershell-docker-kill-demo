@@ -2,29 +2,34 @@ package main
 
 import (
 	"log"
+	"os"
 	"os/exec"
-	"syscall"
-	"time"
 )
 
 func main() {
 
-	cmd := exec.Command("powershell", "-File", "./test.ps1")
-	err := cmd.Start()
+	log.Printf("My PID: %d\n", os.Getpid())
+
+	cmd1 := exec.Command("powershell", "-File", "./child1.ps1")
+	err := cmd1.Start()
 	if err != nil {
 		log.Fatal(err)
 	}
-	time.Sleep(30000 * time.Millisecond)
+	log.Printf("Child Process ID: %d", cmd1.Process.Pid)
 
-	log.Printf("Process ID: %d", cmd.Process.Pid)
-	// This doesn't do anything
-	log.Printf("Sending SIGTERM to PID: %d", cmd.Process.Pid)
-	err = cmd.Process.Signal(syscall.SIGTERM)
-	// This kills the process
-	cmd.Process.Kill()
+        cmd2 := exec.Command("powershell", "-File", "./child2.ps1")
+	err = cmd2.Start()
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("Child Process ID: %d", cmd2.Process.Pid)
 
-	log.Printf("Waiting for command to finish...")
-	err = cmd.Wait()
-
+	log.Printf("Waiting for commands to finish...")
+	err = cmd1.Wait()
 	log.Printf("Command finished with error: %v", err)
+	err = cmd2.Wait()
+	log.Printf("Command finished with error: %v", err)
+
+
+
 }
