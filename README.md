@@ -1,4 +1,4 @@
-# Demo of Golang + spawned processes on Windows + taskkill /t
+# Golang + spawned processes on Windows + taskkill /t
 
 `taskkill /t` [documentation](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill) states that `/t` will kill
 the process specified by PID as well as any child processes started by it.
