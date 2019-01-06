@@ -20,6 +20,6 @@ The result now is that the docker container stays running.
 
 ## Useful links
 
-- [Console Process Group])(https://docs.microsoft.com/en-us/windows/console/console-process-groups)
+- [Console Process Group](https://docs.microsoft.com/en-us/windows/console/console-process-groups)
 - [Identifying child processes in powershell](http://www.boldevin.com/?p=89)
 - [Process explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer)
